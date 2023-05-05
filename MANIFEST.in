@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include stk_roll *.css
+recursive-include stk_roll *.csv
+recursive-include stk_roll *.html
+recursive-include stk_roll *.ico
+recursive-include stk_roll *.js
+recursive-include stk_roll *.json
+recursive-include stk_roll *.md
+recursive-include stk_roll *.png
+recursive-include stk_roll *.py
+recursive-include stk_roll *.svg
+recursive-include stk_roll *.txt
+recursive-exclude stk_roll *.pyc
