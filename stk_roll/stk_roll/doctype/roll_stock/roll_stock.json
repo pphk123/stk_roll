@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:batch_no",
+ "creation": "2023-05-05 16:45:34.221729",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "batch_no",
+  "column_break_kqvwi",
+  "date",
+  "looms_no",
+  "section_break_hlixi",
+  "quality",
+  "column_break_rkl0t",
+  "colour",
+  "column_break_xr9sf",
+  "gsm",
+  "section_break_clcll",
+  "quantity",
+  "column_break_3pb6t",
+  "width",
+  "column_break_uvxi5",
+  "length",
+  "section_break_axxuu",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Batch No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_hlixi",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "quality",
+   "fieldtype": "Data",
+   "label": "Quality",
+   "reqd": 1
+  },
+  {
+   "fieldname": "colour",
+   "fieldtype": "Data",
+   "label": "Colour",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gsm",
+   "fieldtype": "Data",
+   "label": "GSM",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_clcll",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "label": "Quantity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Int",
+   "label": "Width",
+   "reqd": 1
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Int",
+   "label": "Length",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_axxuu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "looms_no",
+   "fieldtype": "Data",
+   "label": "Looms No"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Roll Stock",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rkl0t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_xr9sf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_3pb6t",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uvxi5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_kqvwi",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-05-05 16:49:56.953308",
+ "modified_by": "Administrator",
+ "module": "Stk Roll",
+ "name": "Roll Stock",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
