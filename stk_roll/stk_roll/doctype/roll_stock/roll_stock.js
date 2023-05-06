@@ -14,7 +14,7 @@ frappe.ui.form.on('Roll Stock', {
 			method: 'stk_roll.stk_roll.doctype.roll_stock.roll_stock.get_attribute_query',
 			args: {
 				parent: 'Quality'
-			},
+			},//
 			 
 			callback: (r) => {
 				frm.set_df_property('quality', 'options', r.message)
