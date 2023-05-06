@@ -1,0 +1,35 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"MhV8Rd7Tp_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Roll Stock</span>\",\"col\":12}},{\"id\":\"5tAB-e159F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roll Stock\",\"col\":3}}]",
+ "creation": "2023-05-06 10:44:58.260722",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "stock",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Roll Stock Dashboard",
+ "links": [],
+ "modified": "2023-05-06 10:46:33.738746",
+ "modified_by": "Administrator",
+ "module": "Stk Roll",
+ "name": "Roll Stock Dashboard",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 31.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Roll Stock",
+   "link_to": "Roll Stock",
+   "type": "DocType"
+  }
+ ],
+ "title": "Roll Stock Dashboard"
+}

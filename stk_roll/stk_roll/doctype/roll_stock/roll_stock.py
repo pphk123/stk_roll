@@ -12,7 +12,7 @@ class RollStock(Document):
 def get_attribute_query(parent):
 	return frappe.db.sql(
 		"""select attribute_value from `tabItem Attribute Value` 
-			where parent = %s""",
+			where parent = %s order by attribute_value""",
 		(parent),
 		 
 	)

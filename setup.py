@@ -4,6 +4,8 @@ with open("requirements.txt") as f:
 	install_requires = f.read().strip().split("\n")
 
 # get version from __version__ variable in stk_roll/__init__.py
+# Token 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
+#user name pphk123
 from stk_roll import __version__ as version
 
 setup(

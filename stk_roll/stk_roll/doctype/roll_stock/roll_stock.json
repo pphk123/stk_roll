@@ -81,19 +81,19 @@
   {
    "fieldname": "quantity",
    "fieldtype": "Int",
-   "label": "Quantity",
+   "label": "Quantity (Kg)",
    "reqd": 1
   },
   {
    "fieldname": "width",
    "fieldtype": "Int",
-   "label": "Width",
+   "label": "Width (Meter)",
    "reqd": 1
   },
   {
    "fieldname": "length",
    "fieldtype": "Int",
-   "label": "Length",
+   "label": "Length (Meter)",
    "reqd": 1
   },
   {
@@ -138,7 +138,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-06 10:10:17.965004",
+ "modified": "2023-05-06 10:49:53.128678",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Roll Stock",
@@ -155,6 +155,20 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Roll Stock",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
