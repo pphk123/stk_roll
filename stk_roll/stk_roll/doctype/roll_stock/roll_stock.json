@@ -9,9 +9,13 @@
  "engine": "InnoDB",
  "field_order": [
   "item",
-  "batch_no",
   "column_break_kqvwi",
   "date",
+  "section_break_snsff",
+  "batch_no",
+  "column_break_ps6jc",
+  "denior",
+  "column_break_fvy3y",
   "looms_no",
   "section_break_hlixi",
   "quality",
@@ -20,12 +24,19 @@
   "column_break_xr9sf",
   "gsm",
   "section_break_clcll",
-  "quantity",
+  "weight",
   "column_break_3pb6t",
   "width",
   "column_break_uvxi5",
   "length",
   "section_break_axxuu",
+  "width_meter",
+  "column_break_549x8",
+  "square_meter",
+  "column_break_iikk1",
+  "meter_average",
+  "column_break_uj0ov",
+  "gsm_actual",
   "amended_from"
  ],
  "fields": [
@@ -41,7 +52,7 @@
    "fieldname": "batch_no",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Batch No",
+   "label": "Roll No",
    "reqd": 1,
    "unique": 1
   },
@@ -72,6 +83,7 @@
    "fieldname": "gsm",
    "fieldtype": "Select",
    "label": "GSM",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -79,15 +91,9 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "quantity",
-   "fieldtype": "Int",
-   "label": "Quantity (Kg)",
-   "reqd": 1
-  },
-  {
    "fieldname": "width",
    "fieldtype": "Int",
-   "label": "Width (Meter)",
+   "label": "Width (Inch)",
    "reqd": 1
   },
   {
@@ -133,12 +139,73 @@
   {
    "fieldname": "column_break_kqvwi",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight(Kg)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "width_meter",
+   "fieldtype": "Float",
+   "label": "Width (Meter)",
+   "precision": "9",
+   "read_only": 1
+  },
+  {
+   "fieldname": "square_meter",
+   "fieldtype": "Float",
+   "label": "Square Meter",
+   "precision": "9",
+   "read_only": 1
+  },
+  {
+   "fieldname": "meter_average",
+   "fieldtype": "Float",
+   "label": "Meter Average",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gsm_actual",
+   "fieldtype": "Float",
+   "label": "GSM (Actual)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_snsff",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ps6jc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "denior",
+   "fieldtype": "Int",
+   "label": "Denior"
+  },
+  {
+   "fieldname": "column_break_fvy3y",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_549x8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_iikk1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_uj0ov",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-06 10:49:53.128678",
+ "modified": "2023-05-07 11:21:40.594748",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Roll Stock",
