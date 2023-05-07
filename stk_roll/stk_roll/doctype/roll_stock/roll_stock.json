@@ -10,9 +10,11 @@
  "field_order": [
   "item",
   "column_break_kqvwi",
+  "batch_no",
+  "column_break_yaghk",
   "date",
   "section_break_snsff",
-  "batch_no",
+  "mess",
   "column_break_ps6jc",
   "denior",
   "column_break_fvy3y",
@@ -200,12 +202,22 @@
   {
    "fieldname": "column_break_uj0ov",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mess",
+   "fieldtype": "Select",
+   "label": "Mess",
+   "options": "\n8 X 8\n9 X 9\n10 X 10\n11 X 11\n12 X 12\n13 X 13\n14 X 14\n15 X 15"
+  },
+  {
+   "fieldname": "column_break_yaghk",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-07 11:21:40.594748",
+ "modified": "2023-05-07 20:49:05.814443",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Roll Stock",

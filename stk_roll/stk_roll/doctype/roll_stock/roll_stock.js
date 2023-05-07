@@ -48,7 +48,9 @@ frappe.ui.form.on('Roll Stock', {
 				frm.set_df_property('gsm', 'options', r.message)
 			},
 		})
-
+		if (frm.doc.__islocal) {
+			frm.trigger('set_last_data');
+		}
 	},
 
 	width(frm) {
@@ -95,6 +97,26 @@ frappe.ui.form.on('Roll Stock', {
 			frm.set_value("gsm_actual", "");
 			frm.set_value("gsm", "");
 		}
+	},
+	set_last_data(frm) {
+		frappe.call({
+			method: "stk_roll.stk_roll.doctype.roll_stock.roll_stock.get_last_data",
+			callback(r) {
+				if (r && r.message) {
+					frm.set_value('item', r.message.item);
+
+					frm.set_value('mess', r.message.mess);
+					frm.set_value('denior', r.message.denior);
+					frm.set_value('looms_no', r.message.looms_no);
+
+					frm.set_value('quality', r.message.quality);
+					frm.set_value('colour', r.message.colour);
+
+					frm.set_value('width', r.message.width);
+					frm.set_value('length', r.message.length);
+				}
+			}
+		});
 	}
 
 });
