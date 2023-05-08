@@ -58,19 +58,23 @@
    "options": "Roll Stock"
   },
   {
+   "fetch_from": "ul_roll.date",
    "fieldname": "date",
    "fieldtype": "Date",
-   "label": "Date"
+   "label": "Date",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_8y6sj",
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "ul_roll.gsm_actual",
    "fieldname": "gsm_actual",
    "fieldtype": "Float",
    "label": "GSM (Actual)",
-   "precision": "9"
+   "precision": "9",
+   "read_only": 1
   },
   {
    "fieldname": "one_side_lamination",
@@ -100,6 +104,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:doc.ul_roll",
    "fieldname": "ul_roll_2",
    "fieldtype": "Heading",
    "label": "UL Roll"
@@ -117,7 +122,8 @@
   {
    "fieldname": "a_weight",
    "fieldtype": "Float",
-   "label": "Weight(Kg)"
+   "label": "Weight(Kg)",
+   "precision": "9"
   },
   {
    "fieldname": "a_width",
@@ -132,17 +138,20 @@
   {
    "fieldname": "a_meter_average",
    "fieldtype": "Float",
-   "label": "Meter Average"
+   "label": "Meter Average",
+   "precision": "9"
   },
   {
    "fieldname": "a_gsm_actual",
    "fieldtype": "Float",
-   "label": "GSM (Actual)"
+   "label": "GSM (Actual)",
+   "precision": "9"
   },
   {
    "fieldname": "a_gain_weigth",
    "fieldtype": "Float",
-   "label": "Added Weight"
+   "label": "Added Weight",
+   "precision": "9"
   },
   {
    "fieldname": "b_date",
@@ -157,7 +166,8 @@
   {
    "fieldname": "b_weight",
    "fieldtype": "Float",
-   "label": "Weight(Kg)"
+   "label": "Weight(Kg)",
+   "precision": "9"
   },
   {
    "fieldname": "b_width",
@@ -172,85 +182,119 @@
   {
    "fieldname": "b_meter_average",
    "fieldtype": "Float",
-   "label": "Meter Average"
+   "label": "Meter Average",
+   "precision": "9"
   },
   {
    "fieldname": "b_gsm_actual",
    "fieldtype": "Float",
-   "label": "GSM (Actual)"
+   "label": "GSM (Actual)",
+   "precision": "9"
   },
   {
    "fieldname": "b_gain_weigth",
    "fieldtype": "Float",
-   "label": "Added Weight"
+   "label": "Added Weight",
+   "precision": "9"
   },
   {
+   "fetch_from": "ul_roll.colour",
    "fieldname": "colour",
-   "fieldtype": "Select",
-   "label": "Colour"
+   "fieldtype": "Data",
+   "label": "Colour",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.weight",
    "fieldname": "weight",
    "fieldtype": "Float",
-   "label": "Weight(Kg)"
+   "label": "Weight(Kg)",
+   "precision": "9",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.width",
    "fieldname": "width",
    "fieldtype": "Int",
-   "label": "Width (Inch)"
+   "label": "Width (Inch)",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.length",
    "fieldname": "length",
    "fieldtype": "Int",
-   "label": "Length (Meter)"
+   "label": "Length (Meter)",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.meter_average",
    "fieldname": "meter_average",
    "fieldtype": "Data",
-   "label": "Meter Average"
+   "label": "Meter Average",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.mess",
    "fieldname": "mess",
    "fieldtype": "Select",
-   "label": "Mess"
+   "label": "Mess",
+   "options": "\n8 X 8\n9 X 9\n10 X 10\n11 X 11\n12 X 12\n13 X 13\n14 X 14\n15 X 15",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.denior",
    "fieldname": "denior",
    "fieldtype": "Int",
-   "label": "Denior"
+   "label": "Denior",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.looms_no",
    "fieldname": "looms_no",
    "fieldtype": "Data",
-   "label": "Looms No"
+   "label": "Looms No",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.quality",
    "fieldname": "quality",
    "fieldtype": "Data",
-   "label": "Quality"
+   "label": "Quality",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.gsm",
    "fieldname": "gsm",
-   "fieldtype": "Select",
-   "label": "GSM"
+   "fieldtype": "Data",
+   "label": "GSM",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.width_meter",
    "fieldname": "width_meter",
    "fieldtype": "Float",
-   "label": "Width (Meter)"
+   "label": "Width (Meter)",
+   "precision": "9",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.square_meter",
    "fieldname": "square_meter",
    "fieldtype": "Float",
-   "label": "Square Meter"
+   "label": "Square Meter",
+   "precision": "9",
+   "read_only": 1
   },
   {
+   "fetch_from": "ul_roll.item",
    "fieldname": "item",
    "fieldtype": "Link",
    "label": "Item",
-   "options": "Item"
+   "options": "Item",
+   "read_only": 1
   },
   {
+   "depends_on": "eval:doc.ul_roll",
    "fieldname": "ul_roll_1",
    "fieldtype": "Heading",
    "label": "UL Roll"
@@ -260,6 +304,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "depends_on": "eval:doc.ul_roll",
    "fieldname": "not_needed",
    "fieldtype": "Read Only",
    "is_virtual": 1,
@@ -269,7 +314,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-07 22:32:43.875440",
+ "modified": "2023-05-08 14:47:40.272797",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Lamination Roll",
