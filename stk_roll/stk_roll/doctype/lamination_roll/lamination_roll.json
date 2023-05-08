@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:batch_no",
  "creation": "2023-05-07 21:46:48.215315",
  "default_view": "List",
  "doctype": "DocType",
@@ -8,6 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "ul_roll",
+  "column_break_d2ohq",
+  "batch_no",
   "section_break_kw29c",
   "ul_roll_1",
   "item",
@@ -33,7 +36,7 @@
   "a_date",
   "a_colour",
   "a_weight",
-  "a_gain_weigth",
+  "a_gain_weight",
   "a_width",
   "a_length",
   "a_meter_average",
@@ -43,7 +46,7 @@
   "b_date",
   "b_colour",
   "b_weight",
-  "b_gain_weigth",
+  "b_gain_weight",
   "b_width",
   "b_length",
   "b_meter_average",
@@ -110,6 +113,7 @@
    "label": "UL Roll"
   },
   {
+   "default": "Today",
    "fieldname": "a_date",
    "fieldtype": "Date",
    "label": "Date"
@@ -148,12 +152,6 @@
    "precision": "9"
   },
   {
-   "fieldname": "a_gain_weigth",
-   "fieldtype": "Float",
-   "label": "Added Weight",
-   "precision": "9"
-  },
-  {
    "fieldname": "b_date",
    "fieldtype": "Date",
    "label": "Date"
@@ -189,12 +187,6 @@
    "fieldname": "b_gsm_actual",
    "fieldtype": "Float",
    "label": "GSM (Actual)",
-   "precision": "9"
-  },
-  {
-   "fieldname": "b_gain_weigth",
-   "fieldtype": "Float",
-   "label": "Added Weight",
    "precision": "9"
   },
   {
@@ -309,15 +301,40 @@
    "fieldtype": "Read Only",
    "is_virtual": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_d2ohq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Roll No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "a_gain_weight",
+   "fieldtype": "Float",
+   "label": "Added Weight",
+   "precision": "9"
+  },
+  {
+   "fieldname": "b_gain_weight",
+   "fieldtype": "Float",
+   "label": "Added Weight",
+   "precision": "9"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-08 14:52:39.292860",
+ "modified": "2023-05-08 15:31:34.344483",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Lamination Roll",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
