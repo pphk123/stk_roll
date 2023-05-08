@@ -1,0 +1,295 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-07 21:46:48.215315",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ul_roll",
+  "section_break_kw29c",
+  "ul_roll_1",
+  "item",
+  "mess",
+  "denior",
+  "looms_no",
+  "quality",
+  "gsm",
+  "width_meter",
+  "square_meter",
+  "column_break_8y6sj",
+  "ul_roll_2",
+  "date",
+  "colour",
+  "weight",
+  "not_needed",
+  "width",
+  "length",
+  "meter_average",
+  "gsm_actual",
+  "column_break_rplwy",
+  "one_side_lamination",
+  "a_date",
+  "a_colour",
+  "a_weight",
+  "a_gain_weigth",
+  "a_width",
+  "a_length",
+  "a_meter_average",
+  "a_gsm_actual",
+  "column_break_ggake",
+  "two_side_lamination",
+  "b_date",
+  "b_colour",
+  "b_weight",
+  "b_gain_weigth",
+  "b_width",
+  "b_length",
+  "b_meter_average",
+  "b_gsm_actual",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "ul_roll",
+   "fieldtype": "Link",
+   "label": "UL Roll",
+   "options": "Roll Stock"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "column_break_8y6sj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gsm_actual",
+   "fieldtype": "Float",
+   "label": "GSM (Actual)",
+   "precision": "9"
+  },
+  {
+   "fieldname": "one_side_lamination",
+   "fieldtype": "Heading",
+   "label": "One Side Lamination"
+  },
+  {
+   "fieldname": "column_break_ggake",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "two_side_lamination",
+   "fieldtype": "Heading",
+   "label": "Two Side Lamination"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Lamination Roll",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rplwy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ul_roll_2",
+   "fieldtype": "Heading",
+   "label": "UL Roll"
+  },
+  {
+   "fieldname": "a_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "a_colour",
+   "fieldtype": "Select",
+   "label": "Colour"
+  },
+  {
+   "fieldname": "a_weight",
+   "fieldtype": "Float",
+   "label": "Weight(Kg)"
+  },
+  {
+   "fieldname": "a_width",
+   "fieldtype": "Int",
+   "label": "Width (Inch)"
+  },
+  {
+   "fieldname": "a_length",
+   "fieldtype": "Int",
+   "label": "Length (Meter)"
+  },
+  {
+   "fieldname": "a_meter_average",
+   "fieldtype": "Float",
+   "label": "Meter Average"
+  },
+  {
+   "fieldname": "a_gsm_actual",
+   "fieldtype": "Float",
+   "label": "GSM (Actual)"
+  },
+  {
+   "fieldname": "a_gain_weigth",
+   "fieldtype": "Float",
+   "label": "Added Weight"
+  },
+  {
+   "fieldname": "b_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "b_colour",
+   "fieldtype": "Select",
+   "label": "Colour"
+  },
+  {
+   "fieldname": "b_weight",
+   "fieldtype": "Float",
+   "label": "Weight(Kg)"
+  },
+  {
+   "fieldname": "b_width",
+   "fieldtype": "Int",
+   "label": "Width (Inch)"
+  },
+  {
+   "fieldname": "b_length",
+   "fieldtype": "Int",
+   "label": "Length (Meter)"
+  },
+  {
+   "fieldname": "b_meter_average",
+   "fieldtype": "Float",
+   "label": "Meter Average"
+  },
+  {
+   "fieldname": "b_gsm_actual",
+   "fieldtype": "Float",
+   "label": "GSM (Actual)"
+  },
+  {
+   "fieldname": "b_gain_weigth",
+   "fieldtype": "Float",
+   "label": "Added Weight"
+  },
+  {
+   "fieldname": "colour",
+   "fieldtype": "Select",
+   "label": "Colour"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight(Kg)"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Int",
+   "label": "Width (Inch)"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Int",
+   "label": "Length (Meter)"
+  },
+  {
+   "fieldname": "meter_average",
+   "fieldtype": "Data",
+   "label": "Meter Average"
+  },
+  {
+   "fieldname": "mess",
+   "fieldtype": "Select",
+   "label": "Mess"
+  },
+  {
+   "fieldname": "denior",
+   "fieldtype": "Int",
+   "label": "Denior"
+  },
+  {
+   "fieldname": "looms_no",
+   "fieldtype": "Data",
+   "label": "Looms No"
+  },
+  {
+   "fieldname": "quality",
+   "fieldtype": "Data",
+   "label": "Quality"
+  },
+  {
+   "fieldname": "gsm",
+   "fieldtype": "Select",
+   "label": "GSM"
+  },
+  {
+   "fieldname": "width_meter",
+   "fieldtype": "Float",
+   "label": "Width (Meter)"
+  },
+  {
+   "fieldname": "square_meter",
+   "fieldtype": "Float",
+   "label": "Square Meter"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "ul_roll_1",
+   "fieldtype": "Heading",
+   "label": "UL Roll"
+  },
+  {
+   "fieldname": "section_break_kw29c",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "not_needed",
+   "fieldtype": "Read Only",
+   "is_virtual": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-05-07 22:32:43.875440",
+ "modified_by": "Administrator",
+ "module": "Stk Roll",
+ "name": "Lamination Roll",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
