@@ -8,6 +8,11 @@ frappe.ui.form.on('Roll Stock', {
 			frm.toggle_display("batch_no", true);
 			frm.set_df_property('batch_no', 'read_only', 1)
 		}
+		if (!frm.is_new() && frm.doc.docstatus === 1) {
+			frm.add_custom_button(__("Lamination Roll"), () =>
+				frm.events.lamination_roll(frm)
+			);
+		}
 	},
 	onload: function (frm) {
 		frm.set_query('item', () => {
@@ -117,6 +122,14 @@ frappe.ui.form.on('Roll Stock', {
 				}
 			}
 		});
-	}
+	},
+	lamination_roll: function (frm) {
+		frappe.model.open_mapped_doc({
+			method:
+				"stk_roll.stk_roll.doctype.roll_stock.roll_stock.lamination_roll",
+			frm: frm,
+			run_link_triggers: true,
+		});
+	},
 
 });

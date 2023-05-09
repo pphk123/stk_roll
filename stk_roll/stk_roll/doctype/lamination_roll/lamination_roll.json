@@ -109,8 +109,9 @@
   {
    "depends_on": "eval:doc.ul_roll",
    "fieldname": "ul_roll_2",
-   "fieldtype": "Heading",
-   "label": "UL Roll"
+   "fieldtype": "HTML",
+   "label": "UL Roll",
+   "options": "<h4>&nbsp;</h4>"
   },
   {
    "default": "Today",
@@ -126,8 +127,7 @@
   {
    "fieldname": "a_weight",
    "fieldtype": "Float",
-   "label": "Weight(Kg)",
-   "precision": "9"
+   "label": "Weight(Kg)"
   },
   {
    "fieldname": "a_width",
@@ -140,16 +140,20 @@
    "label": "Length (Meter)"
   },
   {
+   "default": "0",
    "fieldname": "a_meter_average",
    "fieldtype": "Float",
    "label": "Meter Average",
-   "precision": "9"
+   "precision": "9",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "a_gsm_actual",
    "fieldtype": "Float",
    "label": "GSM (Actual)",
-   "precision": "9"
+   "precision": "9",
+   "read_only": 1
   },
   {
    "fieldname": "b_date",
@@ -164,8 +168,7 @@
   {
    "fieldname": "b_weight",
    "fieldtype": "Float",
-   "label": "Weight(Kg)",
-   "precision": "9"
+   "label": "Weight(Kg)"
   },
   {
    "fieldname": "b_width",
@@ -178,16 +181,20 @@
    "label": "Length (Meter)"
   },
   {
+   "default": "0",
    "fieldname": "b_meter_average",
    "fieldtype": "Float",
    "label": "Meter Average",
-   "precision": "9"
+   "precision": "9",
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "b_gsm_actual",
    "fieldtype": "Float",
    "label": "GSM (Actual)",
-   "precision": "9"
+   "precision": "9",
+   "read_only": 1
   },
   {
    "fetch_from": "ul_roll.colour",
@@ -201,7 +208,6 @@
    "fieldname": "weight",
    "fieldtype": "Float",
    "label": "Weight(Kg)",
-   "precision": "9",
    "read_only": 1
   },
   {
@@ -298,8 +304,9 @@
   {
    "depends_on": "eval:doc.ul_roll",
    "fieldname": "not_needed",
-   "fieldtype": "Read Only",
+   "fieldtype": "HTML",
    "is_virtual": 1,
+   "options": "<h5>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;</h5>",
    "read_only": 1
   },
   {
@@ -315,22 +322,24 @@
    "unique": 1
   },
   {
+   "default": "0",
    "fieldname": "a_gain_weight",
    "fieldtype": "Float",
    "label": "Added Weight",
-   "precision": "9"
+   "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "b_gain_weight",
    "fieldtype": "Float",
    "label": "Added Weight",
-   "precision": "9"
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-08 15:31:34.344483",
+ "modified": "2023-05-09 10:26:20.670671",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Lamination Roll",

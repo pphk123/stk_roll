@@ -28,17 +28,22 @@ frappe.ui.form.on('Lamination Roll', {
 	// A
 	a_length(frm) {
 		frm.trigger('set_a_meter_average');
+		frm.trigger('set_a_gsm_actual');
 	},
 	a_weight(frm) {
 		frm.trigger('set_a_meter_average');
 		frm.trigger('set_a_gain_weight');
 		frm.trigger('set_b_gain_weight');
+		frm.trigger('set_a_gsm_actual');
+	},
+	a_width(frm) {
+		frm.trigger('set_a_gsm_actual');
 	},
 	set_a_gain_weight(frm) {
 		if (frm.doc.weight && frm.doc.weight > 0 && frm.doc.a_weight && frm.doc.a_weight > 0) {
 			frm.set_value("a_gain_weight", frm.doc.a_weight - frm.doc.weight);
 		} else {
-			frm.set_value("a_gain_weight", "");
+			frm.set_value("a_gain_weight", 0);
 		}
 	},
 	set_a_meter_average(frm) {
@@ -46,23 +51,37 @@ frappe.ui.form.on('Lamination Roll', {
 			frm.set_value("a_meter_average", frm.doc.a_weight / frm.doc.a_length * 1000);
 		}
 		else {
-			frm.set_value("a_meter_average", "");
+			frm.set_value("a_meter_average", 0);
+		}
+	},
+	set_a_gsm_actual(frm) {
+		if (frm.doc.a_weight && frm.doc.a_weight > 0 && frm.doc.a_width && frm.doc.a_width > 0 && frm.doc.a_length && frm.doc.a_length > 0) {
+			frm.set_value("a_gsm_actual", frm.doc.a_weight / ((frm.doc.a_width / 12 / 3.28) * frm.doc.a_length) * 1000);
+
+		}
+		else {
+			frm.set_value("a_gsm_actual", 0);
 		}
 	},
 
 	// B
 	b_length(frm) {
 		frm.trigger('set_b_meter_average');
+		frm.trigger('set_b_gsm_actual');
 	},
 	b_weight(frm) {
 		frm.trigger('set_b_meter_average');
 		frm.trigger('set_b_gain_weight');
+		frm.trigger('set_b_gsm_actual');
+	},
+	b_width(frm) {
+		frm.trigger('set_b_gsm_actual');
 	},
 	set_b_gain_weight(frm) {
 		if (frm.doc.a_weight && frm.doc.a_weight > 0 && frm.doc.b_weight && frm.doc.b_weight > 0) {
 			frm.set_value("b_gain_weight", frm.doc.b_weight - frm.doc.a_weight);
 		} else {
-			frm.set_value("b_gain_weight", "");
+			frm.set_value("b_gain_weight", 0);
 		}
 	},
 	set_b_meter_average(frm) {
@@ -70,7 +89,16 @@ frappe.ui.form.on('Lamination Roll', {
 			frm.set_value("b_meter_average", frm.doc.b_weight / frm.doc.b_length * 1000);
 		}
 		else {
-			frm.set_value("b_meter_average", "");
+			frm.set_value("b_meter_average", 0);
+		}
+	},
+	set_b_gsm_actual(frm) {
+		if (frm.doc.b_weight && frm.doc.b_weight > 0 && frm.doc.b_width && frm.doc.b_width > 0 && frm.doc.b_length && frm.doc.b_length > 0) {
+			frm.set_value("b_gsm_actual", frm.doc.b_weight / ((frm.doc.b_width / 12 / 3.28) * frm.doc.b_length) * 1000);
+
+		}
+		else {
+			frm.set_value("b_gsm_actual", 0);
 		}
 	},
 });
