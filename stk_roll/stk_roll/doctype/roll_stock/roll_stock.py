@@ -7,7 +7,14 @@ from frappe.model.mapper import get_mapped_doc
 
 
 class RollStock(Document):
-    pass
+    def before_save(self):
+        self.status = "Draft"
+
+    def before_submit(self):
+        self.db_set('status', 'Active')
+
+    def before_cancel(self):
+        self.db_set('status', 'Cancelled')
 
 
 @frappe.whitelist()

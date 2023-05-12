@@ -10,6 +10,13 @@ frappe.ui.form.on('Lamination Roll', {
 		}
 	},
 	onload: function (frm) {
+		frm.set_query('ul_roll', () => {
+			return {
+				filters: {
+					'status': 'Active'
+				}
+			}
+		});
 		frappe.call({
 			method: 'stk_roll.stk_roll.doctype.roll_stock.roll_stock.get_attribute_query',
 			args: {
