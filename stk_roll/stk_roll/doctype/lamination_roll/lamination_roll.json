@@ -356,24 +356,28 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "0",
    "fieldname": "total_weight_gain",
    "fieldtype": "Float",
-   "label": "Total Weight Added"
+   "label": "Total Weight Added",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_cad5s",
    "fieldtype": "Column Break"
   },
   {
+   "default": "0",
    "fieldname": "weight_gain_per",
    "fieldtype": "Float",
-   "label": "Weight Added %"
+   "label": "Weight Added %",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-11 10:18:52.958002",
+ "modified": "2023-05-12 08:03:34.696126",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Lamination Roll",

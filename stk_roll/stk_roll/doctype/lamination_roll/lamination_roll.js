@@ -35,10 +35,12 @@ frappe.ui.form.on('Lamination Roll', {
 		frm.trigger('set_a_gain_weight');
 		frm.trigger('set_b_gain_weight');
 		frm.trigger('set_a_gsm_actual');
+		frm.trigger('weight_calc');
 	},
 	a_width(frm) {
 		frm.trigger('set_a_gsm_actual');
 	},
+
 	set_a_gain_weight(frm) {
 		if (frm.doc.weight && frm.doc.weight > 0 && frm.doc.a_weight && frm.doc.a_weight > 0) {
 			frm.set_value("a_gain_weight", frm.doc.a_weight - frm.doc.weight);
@@ -73,10 +75,12 @@ frappe.ui.form.on('Lamination Roll', {
 		frm.trigger('set_b_meter_average');
 		frm.trigger('set_b_gain_weight');
 		frm.trigger('set_b_gsm_actual');
+		frm.trigger('weight_calc');
 	},
 	b_width(frm) {
 		frm.trigger('set_b_gsm_actual');
 	},
+
 	set_b_gain_weight(frm) {
 		if (frm.doc.a_weight && frm.doc.a_weight > 0 && frm.doc.b_weight && frm.doc.b_weight > 0) {
 			frm.set_value("b_gain_weight", frm.doc.b_weight - frm.doc.a_weight);
@@ -99,6 +103,14 @@ frappe.ui.form.on('Lamination Roll', {
 		}
 		else {
 			frm.set_value("b_gsm_actual", 0);
+		}
+	},
+	weight_calc(frm) {
+		if (frm.doc.a_gain_weight && frm.doc.a_gain_weight > 0 && frm.doc.b_gain_weight && frm.doc.b_gain_weight) {
+			frm.set_value("total_weight_gain", frm.doc.a_gain_weight + frm.doc.b_gain_weight);
+		}
+		if (frm.doc.total_weight_gain && frm.doc.total_weight_gain > 0 && frm.doc.b_weight && frm.doc.b_weight) {
+			frm.set_value("weight_gain_per", frm.doc.total_weight_gain * 100 / frm.doc.b_weight);
 		}
 	},
 });
