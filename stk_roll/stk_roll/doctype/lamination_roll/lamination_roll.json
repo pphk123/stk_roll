@@ -57,7 +57,8 @@
   "total_weight_gain",
   "column_break_cad5s",
   "weight_gain_per",
-  "amended_from"
+  "amended_from",
+  "stock_entry"
  ],
  "fields": [
   {
@@ -372,12 +373,20 @@
    "fieldtype": "Float",
    "label": "Weight Added %",
    "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "stock_entry",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Stock Entry",
+   "options": "Stock Entry"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-12 08:03:34.696126",
+ "modified": "2023-05-13 20:32:14.665400",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Lamination Roll",
