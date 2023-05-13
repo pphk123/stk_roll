@@ -40,7 +40,8 @@
   "column_break_uj0ov",
   "gsm_actual",
   "amended_from",
-  "status"
+  "status",
+  "stock_entry"
  ],
  "fields": [
   {
@@ -223,12 +224,20 @@
    "label": "Status",
    "options": "Draft\nActive\nEmpty\nCancelled",
    "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "stock_entry",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Stock Entry",
+   "options": "Stock Entry"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-12 15:30:57.208721",
+ "modified": "2023-05-13 19:38:48.642672",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Roll Stock",

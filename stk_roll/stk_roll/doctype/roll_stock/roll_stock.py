@@ -11,10 +11,61 @@ class RollStock(Document):
         self.status = "Draft"
 
     def before_submit(self):
-        self.db_set('status', 'Active')
+        result = frappe.db.sql(
+            """SELECT i.name FROM  `tabItem` i
+            INNER JOIN `tabItem Variant Attribute` aa ON i.name = aa.parent
+            INNER JOIN `tabItem Variant Attribute` bb ON i.name = bb.parent
+            INNER JOIN `tabItem Variant Attribute` cc ON i.name = cc.parent
+            WHERE i.variant_of=%s
+            AND aa.attribute = 'Quality' AND aa.attribute_value = %s
+            AND bb.attribute = 'Colour' AND bb.attribute_value = %s
+            AND cc.attribute = 'GSM' AND cc.attribute_value = %s""",
+            (self.item, self.quality, self.colour, self.gsm),
+            as_dict=True,
+        )
+        if len(result) > 0:
+            batch_doc = frappe.get_doc(
+                doctype="Batch",
+                item=result[0].name,
+                batch_id=self.name,
+                supplier=getattr(self, "supplier", None),
+                reference_doctype=self.doctype,
+                reference_name=self.name,
+            )
+            batch_doc.insert(ignore_permissions=True)
+            batch_doc.save(ignore_permissions=True)
 
-    def before_cancel(self):
-        self.db_set('status', 'Cancelled')
+            # Create a new Material Receipt stock entry
+            material_receipt = frappe.get_doc(
+                {
+                    "doctype": "Stock Entry",
+                    "stock_entry_type": "Material Receipt",
+                    "company": "Gami",
+                    "posting_date": self.date,
+                    "items": [
+                        {
+                            "item_code": batch_doc.item,
+                            "qty": self.weight,
+                            "t_warehouse": "Stores - G",
+                            "batch_no": batch_doc.batch_id,
+                        }
+                    ],
+                }
+            )
+
+            # Save the Material Receipt stock entry
+            material_receipt.insert(ignore_permissions=True)
+            material_receipt.save(ignore_permissions=True)
+            material_receipt.submit()
+            self.db_set("stock_entry", material_receipt.name)
+        else:
+            frappe.throw("<b>Item</b> not found")
+        self.db_set("status", "Active")
+
+    def on_cancel(self):
+        material_receipt = frappe.get_doc("Stock Entry", self.stock_entry)
+        material_receipt.cancel()
+        self.db_set("status", "Cancelled")
 
 
 @frappe.whitelist()
@@ -48,10 +99,10 @@ def lamination_roll(source_name, target_doc=None):
                 "doctype": "Lamination Roll",
                 "field_map": {
                     "ul_roll": "name",
-                }
+                },
             },
         },
         target_doc,
-        set_missing_values
+        set_missing_values,
     )
     return doclist
