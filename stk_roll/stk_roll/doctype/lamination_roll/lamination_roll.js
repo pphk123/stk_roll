@@ -106,10 +106,11 @@ frappe.ui.form.on('Lamination Roll', {
 	set_b_gsm_actual(frm) {
 		if (frm.doc.b_weight && frm.doc.b_weight > 0 && frm.doc.b_width && frm.doc.b_width > 0 && frm.doc.b_length && frm.doc.b_length > 0) {
 			frm.set_value("b_gsm_actual", frm.doc.b_weight / ((frm.doc.b_width / 12 / 3.28) * frm.doc.b_length) * 1000);
-
+			frm.set_value("b_gsm", "GSM " + ("00" + Math.round(frm.doc.b_gsm_actual / 10) * 10).slice(-3));
 		}
 		else {
 			frm.set_value("b_gsm_actual", 0);
+			frm.set_value("b_gsm", "");
 		}
 	},
 	weight_calc(frm) {

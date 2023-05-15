@@ -58,7 +58,9 @@
   "column_break_cad5s",
   "weight_gain_per",
   "amended_from",
-  "stock_entry"
+  "stock_entry",
+  "final_item",
+  "b_gsm"
  ],
  "fields": [
   {
@@ -70,7 +72,7 @@
   {
    "fetch_from": "ul_roll.date",
    "fieldname": "date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Date",
    "read_only": 1
   },
@@ -121,9 +123,9 @@
    "options": "<h4>&nbsp;</h4>"
   },
   {
-   "default": "Today",
+   "default": "Now",
    "fieldname": "a_date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Date"
   },
   {
@@ -163,8 +165,9 @@
    "read_only": 1
   },
   {
+   "default": "Now",
    "fieldname": "b_date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Date"
   },
   {
@@ -381,12 +384,25 @@
    "hidden": 1,
    "label": "Stock Entry",
    "options": "Stock Entry"
+  },
+  {
+   "fieldname": "final_item",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Final Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "b_gsm",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "GSM"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-13 20:32:14.665400",
+ "modified": "2023-05-14 10:39:59.559259",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Lamination Roll",

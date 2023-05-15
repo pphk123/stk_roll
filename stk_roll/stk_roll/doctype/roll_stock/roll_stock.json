@@ -50,7 +50,7 @@
    "in_list_view": 1,
    "label": "Item",
    "options": "Item",
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "batch_no",
@@ -61,9 +61,9 @@
    "unique": 1
   },
   {
-   "default": "Today",
+   "default": "Now",
    "fieldname": "date",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Date",
    "reqd": 1
   },
@@ -237,7 +237,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-13 19:38:48.642672",
+ "modified": "2023-05-14 10:28:52.961668",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Roll Stock",
