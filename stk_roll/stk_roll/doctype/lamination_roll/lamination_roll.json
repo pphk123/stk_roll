@@ -67,7 +67,8 @@
    "fieldname": "ul_roll",
    "fieldtype": "Link",
    "label": "UL Roll",
-   "options": "Roll Stock"
+   "options": "Roll Stock",
+   "reqd": 1
   },
   {
    "fetch_from": "ul_roll.date",
@@ -126,27 +127,32 @@
    "default": "Now",
    "fieldname": "a_date",
    "fieldtype": "Datetime",
-   "label": "Date"
+   "label": "Date",
+   "reqd": 1
   },
   {
    "fieldname": "a_colour",
    "fieldtype": "Select",
-   "label": "Colour"
+   "label": "Colour",
+   "reqd": 1
   },
   {
    "fieldname": "a_weight",
    "fieldtype": "Float",
-   "label": "Weight(Kg)"
+   "label": "Weight(Kg)",
+   "reqd": 1
   },
   {
    "fieldname": "a_width",
    "fieldtype": "Int",
-   "label": "Width (Inch)"
+   "label": "Width (Inch)",
+   "reqd": 1
   },
   {
    "fieldname": "a_length",
    "fieldtype": "Int",
-   "label": "Length (Meter)"
+   "label": "Length (Meter)",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -402,7 +408,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-05-14 10:39:59.559259",
+ "modified": "2023-05-15 09:06:10.496635",
  "modified_by": "Administrator",
  "module": "Stk Roll",
  "name": "Lamination Roll",

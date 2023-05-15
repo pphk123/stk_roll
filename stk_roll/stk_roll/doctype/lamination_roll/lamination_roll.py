@@ -7,7 +7,15 @@ from frappe.utils.data import getdate, get_time
 
 
 class LaminationRoll(Document):
-    def before_save(self):
+    def before_submit(self):
+        if not (
+            self.b_date
+            and self.b_colour
+            and self.b_weight
+            and self.b_width
+            and self.b_length
+        ):
+            frappe.throw("Please fill all fields before submit")
         result = frappe.db.sql(
             """SELECT i.name FROM  `tabItem` i
             INNER JOIN `tabItem Variant Attribute` aa ON i.name = aa.parent
@@ -25,7 +33,6 @@ class LaminationRoll(Document):
         else:
             frappe.throw("<b>Item</b> not found")
 
-    def before_submit(self):
         ul_roll_doc = frappe.get_doc("Roll Stock", self.ul_roll)
         if ul_roll_doc.status == "Active":
             ul_roll_doc.status = "Empty"
